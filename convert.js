@@ -9,8 +9,10 @@ function convertTextToHTML(text, title = "Converted Text to HTML") {
     .split("\n\n")
     .map((para) => `<p>${para.trim()}</p>`)
     .join("\n");
+  // Replace single line breaks with <br> tags for proper paragraph formatting.
   const htmlContent = paragraphs.replace(/\n/g, "<br>");
 
+  // Return the HTML content with the title & basic HTML structure.
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -26,6 +28,8 @@ function convertTextToHTML(text, title = "Converted Text to HTML") {
 }
 
 // () to read text file, convert it, & write HTML file
+// async function to read the input file, convert its content to HTML, & write the output file
+// using the convertTextToHTML function and fs module for file operations.
 async function convertFile(inputFilePath, outputFilePath, title) {
   try {
     const data = await fs.readFile(inputFilePath, "utf8");
@@ -42,5 +46,5 @@ const inputFilePath = path.join(__dirname, "input.txt");
 const outputFilePath = path.join(__dirname, "output.html");
 const documentTitle = "My Document Title"; // Customizable title
 
-// Convert the file
+// Convert the file using the defined paths & title
 convertFile(inputFilePath, outputFilePath, documentTitle);
