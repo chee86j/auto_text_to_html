@@ -41,12 +41,4 @@ async function convertFile(inputFilePath, outputFilePath, title) {
   }
 }
 
-// Define input & output file paths
-const inputFilePath = path.join(__dirname, "input.txt");
-const outputFilePath = path.join(__dirname, "output.html");
-const documentTitle = "My Document Title"; // Customizable title
-
-// Convert the file using the defined paths & title
-convertFile(inputFilePath, outputFilePath, documentTitle);
-
 module.exports = { convertTextToHTML, convertFile };

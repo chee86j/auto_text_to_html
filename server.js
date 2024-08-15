@@ -2,6 +2,8 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const { convertTextToHTML } = require('./convert.js');
+const path = require('path');
+const fs = require('fs'); // For Promises, use fs.promises
 const app = express(); // Instance of Express to Handle Routes
 const port = 3000; // Defined Port for the Server
 
