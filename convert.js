@@ -48,3 +48,5 @@ const documentTitle = "My Document Title"; // Customizable title
 
 // Convert the file using the defined paths & title
 convertFile(inputFilePath, outputFilePath, documentTitle);
+
+module.exports = { convertTextToHTML, convertFile };

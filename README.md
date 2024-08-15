@@ -1,6 +1,6 @@
 # Text to HTML Converter
 
-Convert your text documents into clean, well-structured HTML with this Node.js tool. This utility reads a plain text file, applies HTML formatting to organize the content into paragraphs and line breaks, and outputs a fully formatted HTML document.
+Convert your text documents into clean, well-structured HTML with this Node.js-based web application utility . It allows users to upload text files through a web interface, automatically formats the content into HTML with proper paragraph and line break handling, and provides a downloadable HTML file as output.
 
 ## Features
 
@@ -11,27 +11,33 @@ Convert your text documents into clean, well-structured HTML with this Node.js t
 ## Prerequisites
 
 To use this script, ensure Node.js is installed on your system. Download it from the [Node.js official website](https://nodejs.org/).
+You may need to update your dependencies by running `npm update`.
 
 ## Installation
 
-1. Download the script files to your system.
-2. Place your source text file (`input.txt`) in the same directory as the script for easy access.
+Follow these steps to set up the project:
+
+1. Clone or download the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required Node modules:
+   ```bash
+   npm install express express-fileupload
+   ```
 
 ## Usage
 
-Execute the script with Node.js by following these steps:
+To use the application, start the server & access the web interface:
 
-1. Open your command line interface.
-2. Change to the directory containing the script.
-3. Execute the command:
-
-```bash
-node <script_name>.js
-```
-4. Adjust the `<script_name>` to the name of your script file.
+1. `node server.js`
+2. Navigate on a web browser to `http://localhost:3000`.
+3. Use the web form to upload a `.txt` file and click `Convert` to transform it into HTML.
+4. Upon successful conversion, the server will save the HTML file as `output.html` in the project directory and provide a link to download the HTML file.
 
 ## Adjust Your Document Title
 1. Modify the documentTitle variable in the script to personalize the title of the output HTML document:
 `const documentTitle = "Custom Document Title";`
-2. The script will generate an HTML file named output.html in the same directory & upon successful completion you will see:
-`File successfully converted to HTML: path/to/your/output.html`
+2. The application generates an HTML file named output.html in the project directory. You will see a success message on the web page and a link to download the converted HTML file.
+
+## Customization
+You can customize the HTML template used for conversion in the `convert.js` file to include
+any additional HTML elements or styling as desired.
