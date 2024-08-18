@@ -7,6 +7,7 @@ Convert your text documents into clean, well-structured HTML with this Node.js-b
 - **Paragraph Formatting**: Converts text blocks separated by double line breaks into neatly formatted HTML paragraphs.
 - **Line Break Conversion**: Transforms single newline characters within paragraphs into `<br>` tags for proper in-paragraph spacing.
 - **Customizable Titles**: Set a custom title for the HTML output to reflect the content or purpose of the document.
+- **Responsive Design**: Utilizes Tailwind CSS for a modern, mobile-responsive design.
 
 ## Prerequisites
 
@@ -21,7 +22,11 @@ Follow these steps to set up the project:
 2. Navigate to the project directory.
 3. Install the required Node modules:
    ```bash
-   npm install express express-fileupload path
+   npm i
+   ```
+4. Build the Tailwind CSS styles:
+   ```bash
+   npx tailwindcss -i ./src/tailwind.css -o ./public/css/tailwind-output.css --watch
    ```
 
 ## Usage
@@ -34,10 +39,12 @@ To use the application, start the server & access the web interface:
 4. Upon successful conversion, the server will save the HTML file as `output.html` in the project directory and provide a link to download the HTML file.
 
 ## Adjust Your Document Title
+
 1. Modify the documentTitle variable in the script to personalize the title of the output HTML document:
-`const documentTitle = "Custom Document Title";`
+   `const documentTitle = "Custom Document Title";`
 2. The application generates an HTML file named output.html in the project directory. You will see a success message on the web page and a link to download the converted HTML file.
 
 ## Customization
+
 You can customize the HTML template used for conversion in the `convert.js` file to include
 any additional HTML elements or styling as desired.
